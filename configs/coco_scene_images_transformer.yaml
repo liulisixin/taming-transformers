@@ -8,7 +8,7 @@ model:
       params:
         vocab_size: 8192
         block_size: 348  # = 256 + 92 = dim(vqgan_latent_space,16x16) + dim(conditional_builder.embedding_dim)
-        n_layer: 40
+        n_layer: 35
         n_head: 16
         n_embd: 1408
         embd_pdrop: 0.1
@@ -17,7 +17,7 @@ model:
     first_stage_config:
       target: taming.models.vqgan.VQModel
       params:
-        ckpt_path: /path/to/coco_epoch117.ckpt  # https://heibox.uni-heidelberg.de/f/78dea9589974474c97c1/
+        ckpt_path: ./trained_model/coco_epoch117.ckpt  # https://heibox.uni-heidelberg.de/f/78dea9589974474c97c1/
         embed_dim: 256
         n_embed: 8192
         ddconfig:
@@ -47,7 +47,7 @@ model:
 data:
   target: main.DataModuleFromConfig
   params:
-    batch_size: 6
+    batch_size: 2
     train:
       target: taming.data.annotated_objects_coco.AnnotatedObjectsCoco
       params:

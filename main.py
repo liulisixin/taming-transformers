@@ -1,4 +1,5 @@
 import argparse, os, sys, datetime, glob, importlib
+os.environ["CUDA_VISIBLE_DEVICES"] = '6, 7'
 from omegaconf import OmegaConf
 import numpy as np
 from PIL import Image

@@ -1,3 +1,6 @@
+import sys
+sys.path.append(".")
+
 import argparse, os, sys, glob, math, time
 import torch
 import numpy as np

@@ -1,0 +1,6 @@
+__pycache__
+.idea/
+logs/
+sampling.mp4
+taming_transformers.egg-info/
+trained_model/
